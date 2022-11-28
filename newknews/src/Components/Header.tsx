@@ -4,9 +4,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { useRef, useState } from "react";
 
 const Wrapper = styled.div`
+  z-index: 1;
   margin: 0px auto;
   width: 1000px;
   min-width: 800px;
+  position: sticky;
+  background-color: #fff;
+  top: 0;
+  // display: flex;
 `;
 
 const HdTop = styled.div`
