@@ -2,15 +2,12 @@ import styled from "styled-components";
 import Accordion from "../Components/articles";
 import { Link } from "react-router-dom";
 import Header from "../Components/Header";
+import IssueDetail from "../Components/IssueDetail";
 
 const Wrapper = styled.div`
-  height: 5vh;
-  line-height: 5vh;
-  font-size: 30px;
   width: 1000px;
+  min-width: 800px;
   margin: 0px auto;
-  // text-align: center;
-  // background-color: gray;
 `;
 const Center = styled.div`
   width: 1000px;
@@ -21,6 +18,7 @@ const Center = styled.div`
 const Title = styled.h1`
   font-size: 22px;
   font-weight: 600;
+  margin-bottom: 30px;
 `;
 
 
@@ -29,11 +27,10 @@ function Detail() {
   return (
     <>
     <Header />
+    <IssueDetail />
     <Wrapper>
-      <Title>
-        이슈 vs 이슈
-      </Title>
-    </Wrapper>        
+      <Title>전체기사</Title>
+    </Wrapper>
       {
         ServerAPI.forEach((item)=>{
           if(item.clusterNum==1){
@@ -110,7 +107,7 @@ function Detail() {
         })
       }
     <Center>
-    <Accordion title={"이태원, 尹 대통령"} 
+      <Accordion title={"이태원, 尹 대통령"} 
       contentA0={HeadLine1[0]} imageFileA0={ImageLink1[0]} articleLinkA0={Url1[0]}
       contentA1={HeadLine1[1]} imageFileA1={ImageLink1[1]} articleLinkA1={Url1[1]}
       contentA2={HeadLine1[2]} imageFileA2={ImageLink1[2]} articleLinkA2={Url1[2]}
@@ -259,7 +256,7 @@ const ServerAPI = [
   {
     clusterNum: 1,
     title: `尹대통령, 엿새째 합동분향소 조문…한덕수·이상민 동행`,
-    press: "",
+    press: "YTN",
     imageLink: "https://cdn.lamanus.kr/wp-content/uploads/2018/08/28225854/google-2048x1536.png",
     url: "https://v.daum.net/v/20221105110332075",
     type: "1"
@@ -267,7 +264,7 @@ const ServerAPI = [
   {
     clusterNum: 1,
     title: `尹, 국가애도기간 마지막 날 합동분향소 조문···한덕수·이상민 동행`,
-    press: "",
+    press: "연합뉴스",
     imageLink: "https://cdn.lamanus.kr/wp-content/uploads/2018/08/28225854/google-2048x1536.png",
     url: "https://v.daum.net/v/20221105112435359",
     type: "1"

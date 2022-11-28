@@ -7,6 +7,7 @@ const Wrapper = styled.div`
   width: 1000px;
   margin: 0px auto;
   min-width: 800px;
+  //background-color: #89b2e9;
 `;
 
 const Title = styled.h1`
@@ -115,7 +116,6 @@ const Side = styled.div`
 `;
 
 const Img = styled.div<{ bgphoto: string }>`
-  z-index: -1;
   height: 220px;
   width: 325px;
   background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.7)),
@@ -195,12 +195,12 @@ function Issue() {
           </Side>
         </BoxWrapper>
         <Bar>
-          <Link to="/Detail">
-            <span>전체기사 보기 〉</span>
-          </Link>
+          <Link to="/">
+            <span>홈페이지 이동 〉</span>
+          </Link>          
           {issue.map((i) => (
             <Circle></Circle>
-          ))}
+          ))}        
         </Bar>
       </Wrapper>
     </>
